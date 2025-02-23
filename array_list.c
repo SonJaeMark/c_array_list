@@ -122,7 +122,7 @@ int arr_insertAll(ArrayList *arrayList, int count, ...)
 int arr_delete(ArrayList *arrayList, int index)
 {
     // Validate the index
-    if (index < 0 || index >= arrayList->size) {
+    if (index < 0 || (size_t)index >= arrayList->size) {
         return -1; // Return error if index is out of bounds
     }
 
@@ -298,7 +298,7 @@ int arr_getIndexOf(ArrayList *arrayList, void *data, int (*cmpField)(void *, voi
 int arr_set(ArrayList *arrayList, int index, void *data)
 {
     // Validate index to ensure it's within bounds
-    if (index < 0 || index >= arrayList->size) {
+    if (index < 0 || (size_t)index >= arrayList->size) {
         return -1; // Return error if index is invalid
     }
 
